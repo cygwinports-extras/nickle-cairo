@@ -1,0 +1,45 @@
+--- origsrc/cairo-5c-1.4/cairo.5c	2008-01-10 22:53:59.000000000 -0600
++++ src/cairo-5c-1.4/cairo.5c	2009-02-26 00:32:23.560500000 -0600
+@@ -34,7 +34,7 @@
+  */
+ 
+ if (!Command::valid_name ((string[]) { "Cairo" }))
+-    Foreign::load ("libcairo-5c.so.0");
++    Foreign::load ("cygcairo-5c.dll");
+ 
+ extend namespace Cairo {
+     
+--- origsrc/cairo-5c-1.4/configure.ac	2008-03-21 22:59:14.000000000 -0500
++++ src/cairo-5c-1.4/configure.ac	2009-02-26 00:35:54.466750000 -0600
+@@ -21,9 +21,10 @@ dnl libtool versioning
+ 
+ LT_CURRENT=0
+ LT_REVISION=0
++LT_AGE=0
+ AC_SUBST(LT_CURRENT)
+ AC_SUBST(LT_REVISION)
+-LT_AGE=0
++AC_SUBST(LT_AGE)
+ 
+ LT_VERSION_INFO="$LT_CURRENT:$LT_REVISION:$LT_AGE"
+ AC_SUBST(LT_VERSION_INFO)
+@@ -65,7 +66,7 @@ if test "x$GCC" = "xyes"; then
+ fi
+ AC_SUBST(WARN_CFLAGS)
+ 
+-CAIRO_5C_PC_MODULES="cairo cairo-ft cairo-xlib x11 fontconfig"
++CAIRO_5C_PC_MODULES="cairo cairo-ft cairo-xlib x11 fontconfig nickle"
+ 
+ PKG_CHECK_MODULES(CAIRO_5C, $CAIRO_5C_PC_MODULES)
+ 
+--- origsrc/cairo-5c-1.4/src/Makefile.am	2008-02-18 16:57:28.000000000 -0600
++++ src/cairo-5c-1.4/src/Makefile.am	2009-02-26 00:34:42.138625000 -0600
+@@ -48,6 +48,8 @@ libcairo_5c_la_SOURCES = \
+ 
+ lib_LTLIBRARIES = libcairo-5c.la
+ 
++libcairo_5c_la_LDFLAGS = -avoid-version -no-undefined
++
+ libcairo_5c_la_LIBADD = $(CAIRO_5C_LIBS)
+ 
+ AM_CFLAGS=$(WARN_CFLAGS) $(CAIRO_5C_CFLAGS)
