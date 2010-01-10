@@ -1,6 +1,0 @@
-DESCRIPTION="Nickle cairo bindings and GTK+ graphical toolkit"
-HOMEPAGE="http://cairographics.org/cairo-nickle/"
-SRC_URI="http://cairographics.org/releases/cairo-5c-${PV}.tar.gz"
-SRC_DIR="cairo-5c-${PV}"
-
-CYGCONF_ARGS="--disable-static"

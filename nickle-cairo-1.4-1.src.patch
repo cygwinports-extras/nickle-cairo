@@ -23,22 +23,13 @@
  
  LT_VERSION_INFO="$LT_CURRENT:$LT_REVISION:$LT_AGE"
  AC_SUBST(LT_VERSION_INFO)
-@@ -65,7 +66,7 @@ if test "x$GCC" = "xyes"; then
- fi
- AC_SUBST(WARN_CFLAGS)
- 
--CAIRO_5C_PC_MODULES="cairo cairo-ft cairo-xlib x11 fontconfig"
-+CAIRO_5C_PC_MODULES="cairo cairo-ft cairo-xlib x11 fontconfig nickle"
- 
- PKG_CHECK_MODULES(CAIRO_5C, $CAIRO_5C_PC_MODULES)
- 
 --- origsrc/cairo-5c-1.4/src/Makefile.am	2008-02-18 16:57:28.000000000 -0600
 +++ src/cairo-5c-1.4/src/Makefile.am	2009-02-26 00:34:42.138625000 -0600
 @@ -48,6 +48,8 @@ libcairo_5c_la_SOURCES = \
  
  lib_LTLIBRARIES = libcairo-5c.la
  
-+libcairo_5c_la_LDFLAGS = -avoid-version -no-undefined
++libcairo_5c_la_LDFLAGS = -avoid-version -no-undefined -lnickle
 +
  libcairo_5c_la_LIBADD = $(CAIRO_5C_LIBS)
  
