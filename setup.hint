@@ -1,6 +1,0 @@
-category: Gnome Interpreters
-requires: glib2 gtk2-x11 libX11_6 libcairo2 libfontconfig1 nickle
-sdesc: "Nickle cairo bindings and GTK+ graphical toolkit"
-ldesc: "Cairo-5c provides a simple binding for the cairo graphics 
-library within the Nickle programming environment, as well as a 
-graphical toolkit based on GTK+."

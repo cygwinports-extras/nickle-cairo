@@ -1,0 +1,15 @@
+NAME="nickle-cairo"
+VERSION=1.8.1
+RELEASE=1
+CATEGORY="Interpreters"
+SUMMARY="Nickle cairo bindings and GTK+ graphical toolkit"
+DESCRIPTION="Cairo-5c provides a simple binding for the cairo graphics library
+within the Nickle programming environment"
+HOMEPAGE="http://cairographics.org/cairo-nickle/"
+#SRC_URI="http://cairographics.org/releases/cairo-5c-${VERSION}.tar.gz"
+SRC_URI="mirror://debian/pool/main/c/cairo-5c/cairo-5c_${VERSION}.tar.gz"
+SRC_DIR="cairo-5c-${VERSION}"
+PATCH_URI="1.8.1-cygwin-dll.patch"
+
+CYGCONF_ARGS="--disable-static"
+MAKEOPTS+=" exampledir=/usr/share/doc/${NAME}/examples"

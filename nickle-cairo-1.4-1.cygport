@@ -1,7 +1,0 @@
-DESCRIPTION="Nickle cairo bindings and GTK+ graphical toolkit"
-HOMEPAGE="http://cairographics.org/cairo-nickle/"
-#SRC_URI="http://cairographics.org/releases/cairo-5c-${PV}.tar.gz"
-SRC_URI="mirror://debian/pool/main/c/cairo-5c/cairo-5c_${PV}.tar.gz"
-SRC_DIR="cairo-5c-${PV}"
-
-CYGCONF_ARGS="--disable-static ac_cv_func_clock_gettime=no"
